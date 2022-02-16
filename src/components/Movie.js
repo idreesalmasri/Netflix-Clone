@@ -2,7 +2,7 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import ModalMovie from "./ModalMovie";
 import { useState } from 'react';
-
+import { useRef } from 'react';
 
 export default function Movie(props) {
    
@@ -24,6 +24,9 @@ export default function Movie(props) {
 
                     <Card.Body>
                         <Card.Title>{props.data.title}</Card.Title>
+                        <Card.Text>
+                                        {props.data.comment ? props.data.comment : "No Comment is Added"}
+                                    </Card.Text>
                         <Button variant="primary" onClick={() => { handleShowModal(props.data) }}>Show Modal</Button>
                     </Card.Body>
                 </Card>
